@@ -752,17 +752,9 @@ const Body = (props) => {
     return (
         <>
             <div className="p-5 gap-6 flex flex-wrap overflow-hidden ">
-                <Restaurantcard resdata={resobj[0]}/>
-                 <Restaurantcard resdata={resobj[1]}/>
-                 <Restaurantcard resdata={resobj[2]}/>
-                 <Restaurantcard resdata={resobj[3]}/>
-                 <Restaurantcard resdata={resobj[4]}/>
-                 <Restaurantcard resdata={resobj[5]}/>
-                 <Restaurantcard resdata={resobj[6]}/>
-                 <Restaurantcard resdata={resobj[7]}/>
-                {/* {
+                {
                     resobj.map((list) => < Restaurantcard key={list.info.id} resdata={list}/>)
-                } */}
+                }
             </div>
         </>
     )
