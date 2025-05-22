@@ -1,4 +1,7 @@
+import { Link } from "react-router";
+
 const Header = () => {
+
     return (
         <>
             <div className="flex justify-between m-auto px-7 py-4">
@@ -8,9 +11,15 @@ const Header = () => {
                 </div>
                 <div className="flex ">
                     <ul className="flex gap-8 text-xl text-orange-300 items-center">
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <Link to={"/"}>
+                            <li>Home</li>
+                        </Link>
+                        <Link to={"/about"}>
+                            <li>About</li>
+                        </Link>
+                        <Link to={"/contact"}>
+                            <li>Contact</li>
+                        </Link>
                         <li>Cart</li>
                     </ul>
                 </div>
