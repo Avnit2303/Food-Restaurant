@@ -5,7 +5,7 @@ import Header from "./componnet/Header";
 import About from "./componnet/About";
 import Contact from "./componnet/Contact";
 import RestaurntMenu from "./componnet/RestaurantMenu"
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import { createBrowserRouter, RouterProvider, Outlet, useParams } from "react-router";
 
 
 
