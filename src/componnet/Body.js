@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import Restaurantcard from "./Restaurantcard";
 import { useEffect, useState } from "react";
-
+import ShimerUi from "./ShimerUi";
 
 const Body = () => {
     const [resobj, setresobj] = useState([])
@@ -15,20 +15,22 @@ const Body = () => {
         setresobj(final?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     };
     console.log(resobj)
-      console.log(typeof(resobj))
+    console.log(typeof (resobj))
+    if(resobj.length === 0){
+        return  <ShimerUi />
+    }
 
-      
 
-    return (
+ return  (
         <>
             <div className="p-5 gap-6 flex flex-wrap overflow-hidden justify-center">
                 {
-                    
+
                     resobj.map((list) => (
                         <Link to={"/restaurant/" + list.info.id} key={list.info.id}>
-                    < Restaurantcard  resdata={list}/>
+                            < Restaurantcard resdata={list} />
                         </Link>
-                ))   
+                    ))
                 }
             </div>
         </>
