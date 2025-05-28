@@ -14,8 +14,6 @@ const Body = () => {
         const final = await data.json()
         setresobj(final?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     };
-    console.log(resobj)
-    console.log(typeof (resobj))
     if(resobj.length === 0){
         return  <ShimerUi />
     }

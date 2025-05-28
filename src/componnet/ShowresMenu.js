@@ -1,22 +1,25 @@
+import { useState } from "react";
 import ShowlistMenu from "./ShowlistMenu";
 
-const ShowresMenu = (props) =>{
+const ShowresMenu = ({ data,showitems,setshowitem }) => {
+    const handleclick = () =>{
+        setshowitem()
+    }
 
-    const {menu} = props;
-    const titles = menu?.card?.card;
-    const items = menu?.card?.card?.categories?.itemCards;
-
-    return(
+    console.log(data)
+    return (
         <>
-               <h1 className="text-2xl flex justify-center">{titles?.title}</h1>
 
-                {
-                    items?.map((itemslist,index)=>(
-                        <div  key={index}>
-                        <ShowlistMenu menus = {itemslist}/>
-                        </div>
-                    ))
-                }                
+            <div>
+                <div className="w-6/12 bg-gray-100 my-3 shadow-lg mx-auto">
+                    <div className="flex justify-between cursor-pointer" onClick={handleclick}>
+                        <span className="text-2xl">{data.title} ({data?.itemCards?.length})</span>
+                        <span>🔽</span>
+                    </div>
+                   { showitems && <ShowlistMenu item ={data.itemCards}/> }
+                </div>
+
+            </div>
         </>
     )
 }
