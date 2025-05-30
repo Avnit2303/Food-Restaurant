@@ -1,10 +1,12 @@
 import { Link, useParams } from "react-router";
 import Restaurantcard from "./Restaurantcard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ShimerUi from "./ShimerUi";
+import UserContexts from "../utils/UserContext";
 
 const Body = () => {
     const [resobj, setresobj] = useState([])
+    const {loggedinUser,setusername} = useContext(UserContexts)
     useEffect(() => {
         fetchdata()
     }, [])
@@ -21,6 +23,10 @@ const Body = () => {
 
  return  (
         <>
+            <div className="flex justify-center p-3">
+                <label className="flex items-center">Name:</label>
+                <input className="border-2 border-black p-1  items-center " value={loggedinUser} onChange={(e) => setusername(e.target.value)}></input>
+            </div>
             <div className="p-5 gap-6 flex flex-wrap overflow-hidden justify-center">
                 {
 

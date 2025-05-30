@@ -1,6 +1,10 @@
 import { Link } from "react-router";
+import  UserContexts  from "../utils/UserContext"
+import { useContext } from "react";
 
 const Header = () => {
+
+    const {loggedinUser} = useContext(UserContexts)
 
     return (
         <>
@@ -21,6 +25,7 @@ const Header = () => {
                             <li>Contact</li>
                         </Link>
                         <li>Cart</li>
+                        <li>{loggedinUser}</li>
                     </ul>
                 </div>
             </div>

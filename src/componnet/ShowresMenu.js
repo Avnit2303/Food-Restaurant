@@ -1,9 +1,16 @@
 import { useState } from "react";
 import ShowlistMenu from "./ShowlistMenu";
 
-const ShowresMenu = ({ data,showitems,setshowitem }) => {
+const ShowresMenu = ({ data,showitems,setshowitem,indexs }) => {
     const handleclick = () =>{
-        setshowitem()
+        if(indexs == indexs){
+            setshowitem(null)
+            console.log(indexs)
+        }
+        else{
+            setshowitem()
+        }
+    
     }
 
     console.log(data)
