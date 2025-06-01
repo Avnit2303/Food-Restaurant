@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 
 const RestaurantMenu = () =>{
       const[cardinfo,setcardinfo]=useState([])
-       const[showitem,setshowitem] = useState(0);
+       const[showitem,setshowitem] = useState(null);
     const {resid} = useParams()
     useEffect(()=>{
         fetchdata();

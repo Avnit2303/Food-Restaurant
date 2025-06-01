@@ -32,7 +32,7 @@ const Body = () => {
 
                     resobj.map((list) => (
                         <Link to={"/restaurant/" + list.info.id} key={list.info.id}>
-                            < Restaurantcard resdata={list} />
+                            <Restaurantcard resdata={list} />
                         </Link>
                     ))
                 }
